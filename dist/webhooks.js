@@ -115,7 +115,6 @@ var stripeWebhookHandler = function (req, res) { return __awaiter(void 0, void 0
                             },
                         },
                     })
-                    // send receipt email
                     // send receipt
                 ];
             case 4:

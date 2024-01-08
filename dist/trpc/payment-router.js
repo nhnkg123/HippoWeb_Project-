@@ -97,7 +97,6 @@ exports.paymentRouter = (0, trpc_1.router)({
                                 enabled: false,
                             }
                         });
-                        console.log(line_items);
                         _b.label = 4;
                     case 4:
                         _b.trys.push([4, 6, , 7]);
@@ -138,22 +137,22 @@ exports.paymentRouter = (0, trpc_1.router)({
                     case 1:
                         payload = _b.sent();
                         return [4 /*yield*/, payload.find({
-                                collection: "orders",
+                                collection: 'orders',
                                 where: {
                                     id: {
                                         equals: orderId,
-                                    }
-                                }
+                                    },
+                                },
                             })];
                     case 2:
                         orders = (_b.sent()).docs;
                         if (!orders.length) {
-                            throw new server_1.TRPCError({ code: "NOT_FOUND" });
+                            throw new server_1.TRPCError({ code: 'NOT_FOUND' });
                         }
                         order = orders[0];
                         return [2 /*return*/, { isPaid: order._isPaid }];
                 }
             });
         });
-    })
+    }),
 });
